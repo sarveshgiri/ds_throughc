@@ -1,0 +1,25 @@
+#include<stdio.h>
+void insertion(int arr[],int size)
+{
+    int tem,j,i;
+    for(i=1;i<size;i++)
+    {
+        tem=arr[i];
+        j=i-1;
+        while(j>=0&&arr[j]>tem){
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=tem;
+    }
+}
+int main()
+{
+    int size,i;
+    scanf("%d",&size);
+    int arr[size];
+    for(i=0;i<size;i++) scanf("%d",&arr[i]);
+    insertion(arr,size);
+    for(int z=0;z<size;z++)
+    printf("%d ",arr[z]);
+}
